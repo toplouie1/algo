@@ -42,9 +42,38 @@ console.log(linearSearch(classArr, "Nima Sherpa"));
 
 // Binary - Sorted lists
 let numArr = [4, 5, 7, 10, 16, 20];
+// Find the middle Index ;
+// check if the middle is the one - if yes return it
+// then checck is it smaller or bigger
+// if it is bigger we take the right side
+// if it is smaller we take the left sdie .
+// until we find it or if we don't we can return -1 or not found ..
 
 const binarySearch = (arr, valueToFind) => {
-	// Find the middle Index ;
+	let startIndex = 0;
+	let endIndex = arr.length - 1;
+	// console.log(startIndex, endIndex);
+
+	while (startIndex <= endIndex) {
+		let midIndex = Math.floor((startIndex + endIndex) / 2);
+		if (valueToFind === arr[midIndex]) {
+			console.log(midIndex);
+			return;
+		} else if (valueToFind > arr[midIndex]) {
+			startIndex = midIndex + 1;
+		} else if (valueToFind < arr[midIndex]) {
+			endIndex = midIndex - 1;
+		}
+	}
+	return -1;
+	// Find the middle index, Choose smaller if there are two // 0
+	// Array is empty, return -1
+	// Is the value at the middle equal to valueToFind  // 20 === 20 true
+	// return index
+	// Is it less than
+	// grab the left
+	// Is it greater than
+	//grab the right
 };
 
 // Jump = large Size Datasets
