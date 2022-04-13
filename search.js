@@ -38,6 +38,7 @@ const linearSearch = (arr, valueToFind) => {
 	return -1;
 };
 console.log(linearSearch(classArr, "Nima Sherpa"));
+
 // Binary - Sorted lists
 let numArr = [4, 5, 7, 10, 16, 20];
 // log(n)
