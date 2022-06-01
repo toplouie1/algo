@@ -40,3 +40,5 @@ let last = [6, 7, 8];
 console.log(bame.concat(last));
 let newName = [...bame, ...last];
 console.log(newName);
+
+console.log("hey how are you doing ");

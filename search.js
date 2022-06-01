@@ -62,3 +62,8 @@ console.log(binarySearch(numArr, 20));
 
 // Jump = large Size Datasets
 // Exaponential - Very Large Size Datasets
+
+let numString = "11";
+
+let newNum = numString.toString();
+console.log(newNum);

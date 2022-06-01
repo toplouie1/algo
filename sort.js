@@ -75,3 +75,50 @@ const mergeSortRecursive = (arr) => {
 
 let initialArr = [4, 8, 7, 2, 11, 1, 3];
 console.log(mergeSortRecursive(initialArr));
+
+// merge two array
+
+let arr1 = [1, 2, 3, 4];
+let arr2 = [7, 8, 2];
+
+function mergedTwoArrays(arr1, arr2) {
+	let mergedArray = [];
+	let i = 0,
+		j = 0;
+	while (i < arr1.length && j < arr2.length) {
+		if (arr1[i] < arr2[j]) {
+			mergedArray.push(arr1[i]);
+			i++;
+		} else {
+			mergedArray.push(arr2[j]);
+			j++;
+		}
+	}
+
+	if (i <= arr1.length - 1) {
+		arr1.splice(0, i);
+		mergedArray = mergedArray.concat(arr1);
+	} else if (j <= arr2.length - 1) {
+		arr2.splice(0, j);
+		mergedArray = mergedArray.concat(arr2);
+	}
+
+	return mergedArray;
+}
+
+console.log(mergedTwoArrays(arr1, arr2));
+
+const mergeTArr = (arr1, arr2) => {
+	return [...arr1, ...arr2].sort((a, b) => a - b);
+};
+
+// big(n log n )  because there is a sort
+
+console.log(mergeTArr(arr1, arr2));
+
+const merged = async () => {
+	const gettingMerged = await mergedTwoArrays();
+	if (gettingMerged[0]) {
+		return gettingMerged;
+	}
+};
