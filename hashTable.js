@@ -33,5 +33,4 @@ function makeUnique(arr) {
 	return newArr;
 }
 
-let uniqueArr = makeUnique(animals);
-console.log(uniqueArr);
+console.log(makeUnique(animals));

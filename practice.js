@@ -128,6 +128,8 @@ console.log(filter);
 
 // console.log(asceding);
 
+// if the parmas are balanced
+
 let checking = (str) => {
 	let stack = [];
 	let parens = "() [] {}";

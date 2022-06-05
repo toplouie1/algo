@@ -32,7 +32,7 @@ let classArr = [
 const linearSearch = (arr, valueToFind) => {
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] === valueToFind) {
-			return i;
+			return i + 1;
 		}
 	}
 	return -1;
@@ -46,10 +46,14 @@ const binarySearch = (arr, valueToFind) => {
 	let startIndex = 0;
 	let endIndex = arr.length - 1;
 	while (startIndex <= endIndex) {
+		// we create the mid value
 		let midIndex = Math.floor((startIndex + endIndex) / 2);
+
 		if (valueToFind === arr[midIndex]) {
-			console.log(midIndex);
+			// if the value === to arr[value] return midIndex
 			return midIndex;
+			// we need to change the position of the start of end depending on
+			// if it is bigger or smaller .
 		} else if (valueToFind > arr[midIndex]) {
 			startIndex = midIndex + 1;
 		} else if (valueToFind < arr[midIndex]) {
