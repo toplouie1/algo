@@ -133,11 +133,14 @@ console.log(filter);
 let checking = (str) => {
 	let stack = [];
 	let parens = "() [] {}";
+
 	for (let i = 0; i < str.length; i++) {
 		// add each of them to a stack
 		stack.push(str[i]);
 		let open = stack[stack.length - 2];
 		let close = stack[stack.length - 1];
+		// () [] {}
+		console.log(stack);
 
 		if (parens.includes(open + close)) {
 			stack.pop();
@@ -150,6 +153,7 @@ let checking = (str) => {
 
 console.log(checking("[]"));
 console.log(checking("((()))"));
+console.log(checking("(((()))))"));
 console.log(checking("("));
 
 let bSort = (arr) => {
@@ -222,3 +226,43 @@ console.log(mSort([9, 8, 7, 6, 5, 4, 3]));
 // 		return [...arr, ...left, ...right];
 // 	}
 // };
+
+let inputArray = [2, 3, 4, 5];
+let max = -Infinity;
+
+function solution(inputArray) {
+	let max = -Infinity;
+
+	for (let i = 0; i < inputArray.length - 1; i++) {
+		if (inputArray[i] * inputArray[i + 1] > max) {
+			max = inputArray[i] * inputArray[i + 1];
+		}
+	}
+	return max;
+}
+
+console.log(solution([3, 6, -2, -5, 7, 3]));
+
+// common prefix
+
+var longestCommonPrefix = function (strs) {
+	// initilaize a prefix
+	let prefix = strs[0];
+	// loop from 1 because we alerady have the 0 index
+	for (let i = 1; i < strs.length; i++) {
+		// if the index of doesn't return 0 it means it is not the same
+		console.log(strs[i]);
+		console.log(strs[i].indexOf(prefix));
+		while (strs[i].indexOf(prefix) !== 0) {
+			console.log(strs[i]);
+			// remove from the back
+			console.log(prefix);
+			prefix = prefix.substring(0, prefix.length - 1);
+			console.log(prefix);
+		}
+	}
+	return prefix;
+};
+
+console.log(longestCommonPrefix(["flower", "flow", "flight"]));
+// console.log(longestCommonPrefix(["foo", "foow", "foight"]));

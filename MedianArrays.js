@@ -4,9 +4,7 @@ let arr1 = [1, 3, 5];
 let arr2 = [2, 4, 6];
 
 function median(arr1, arr2) {
-	console.log(arr1);
-	console.log(arr2);
-
+	// merge the arr
 	let merged = [...arr1, ...arr2];
 	let sort = merged.sort((a, b) => a - b);
 	console.log(sort);

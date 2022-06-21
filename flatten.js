@@ -42,3 +42,98 @@ let newName = [...bame, ...last];
 console.log(newName);
 
 console.log("hey how are you doing ");
+
+console.log(4 ** 5);
+
+console.log(3 | 3);
+console.log(3 & 2);
+console.log(3 ^ 2);
+
+let all = 2;
+
+console.log((all -= 1));
+console.log((all -= -1));
+console.log((all -= 1));
+console.log((all -= -1));
+console.log((all -= 1));
+
+var maxSubArray = function (nums) {
+	let max = nums[0];
+	let sum = nums[0];
+
+	for (let i = 0; i < nums.length; i++) {
+		sum = sum + nums[i];
+		if (sum > max) {
+			max = sum;
+		}
+		if (sum < 0) sum = 0;
+		console.log(sum);
+		console.log(max);
+	}
+	return max;
+};
+
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+// const fixParentheses = (str) => {
+// 	let open = "(";
+// 	let close = ")";
+// 	let i = 0,
+// 		j = 1;
+// 	let openCount = 0,
+// 		closeCount = 0;
+
+// 	while (i < str.length) {
+// 		if (str[i] == open && str[j] == close) continue;
+// 		if (str[i] == open && str[j] == open) {
+// 			openCount++;
+// 		} else if (str[i] == close && str[j] == close) {
+// 			closeCount++;
+// 		}
+// 		console.log(openCount);
+// 		i++;
+// 		j++;
+// 	}
+// };
+const fixParentheses = (str) => {
+	let result = "";
+	let i = 0,
+		j = 1;
+
+	while (i < str.length) {
+		if (str[i] == "(" && str[j] == ")") {
+			result += "()";
+			i += 2;
+			j += 2;
+		}
+		if (str[i] == "(") {
+			result = "(" + result + ")";
+			i++;
+			j++;
+		} else {
+			result = "(" + result;
+			i++;
+			j++;
+		}
+	}
+	return result;
+};
+
+console.log(fixParentheses("(()()("));
+
+// higher number
+
+const checking = (arr) => {
+	let count = 0;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] > arr[i + 1]) {
+			count++;
+		}
+	}
+	return count < 2;
+};
+console.log(checking([1, 2, 1, 2, 5]));
+console.log(checking([1, 3, 1, 5, 1]));
+console.log(checking([1, 2, 1, 2, 5]));
+console.log(checking([1, 2, 1, 2, 5]));
+console.log(checking([2, 1, 2, 1]));

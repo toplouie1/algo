@@ -48,7 +48,7 @@ const uniques = (nums) => {
 
 const unique = (nums) => {
 	const hashTab = {};
-	for (let i = 0, l = nums.length; i < l; i++) {
+	for (let i = 0; i < nums.length; i++) {
 		if (!hashTab[nums[i]]) {
 			hashTab[nums[i]] = true;
 		} else {
@@ -57,3 +57,157 @@ const unique = (nums) => {
 	}
 	return false;
 };
+
+// two sum
+
+let nums = [2, 7, 11, 15, 4, 5],
+	target = 6;
+
+// var twoSum = function (nums, target) {
+// 	let obj = {};
+// 	// add them to an obj ;
+
+// 	// loop
+// 	for (let i = 0; i < nums.length; i++) {
+// 		// if the value is in the obj return the [i,i]
+// 		if (nums[i] in obj) {
+// 			return [obj[nums[i]], i];
+// 		} else {
+// 			// add target - nums[i] = i
+// 			obj[target - nums[i]] = i;
+// 		}
+// 		console.log(obj);
+// 	}
+// 	return -1;
+// };
+
+var twoSum = function (nums, target) {
+	// add to the obj the key of nums -  target
+	// 2 - 8  = 6
+	// {6 : 0 }
+
+	let obj = {};
+
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] in obj) {
+			return [obj[nums[i]], i];
+		} else {
+			obj[target - nums[i]] = i;
+		}
+	}
+	return -1;
+};
+console.log(twoSum(nums, target));
+
+// let newObj = { 1: 0, 2: 3 };
+// console.log(newObj);
+
+// let newArr = [];
+
+// for (p in newObj) {
+// 	console.log([newObj[p], p]);
+// 	newArr.push(p);
+// }
+
+// console.log(Object.entries(newObj));
+// console.log(Object.keys(newObj));
+// console.log(Object.values(newObj));
+
+// console.log(newArr);
+
+// // let sentence = "lets go ";
+
+// console.log(sentence.charCodeAt(3));
+// console.log(sentence.charAt(3));
+
+// Cases for format_topics. There are no empty arrays.
+// topics = ["Dogs"]
+// Dogs
+
+// ["Dogs", "Cats"]
+// Dogs and Cats
+
+// ["Dogs", "Cats", "Walking"]
+// Dogs, Cats and Walking
+
+let arrs = ["Dogs", "Cats", "Walking", "Knitting"];
+// Dogs, Cats, Walking and Knitting
+
+// const sentence = (arr) => {
+// 	if (arr.length === 1) {
+// 		return `${arr[0]}`;
+// 	} else if (arr.length === 2) {
+// 		return `${arr[0]} and ${arr[1]}`;
+// 	} else if (arr.length === 3) {
+// 		return `${arr[0]}, ${arr[1]} and ${arr[2]}`;
+// 	} else {
+// 		return `${arr[0]}, ${arr[1]}, ${arr[2]} and ${arr[3]}`;
+// 	}
+// };
+
+function stringJoiner(topics) {
+	//base one word case
+	if (topics.length === 1) {
+		return topics[0];
+	} else {
+		return `${topics.slice(0, -1).join(", ")} and ${topics[topics.length - 1]}`;
+	}
+}
+
+const sentence = (arr) => {
+	let string = arr[0];
+
+	for (let i = 1; i < arr.length; i++) {
+		if (i === arr.length - 1) {
+			string += " and " + arr[i];
+		} else {
+			string += ", " + arr[i];
+		}
+	}
+	return string;
+};
+
+console.log(sentence(arrs));
+console.log(sentence(["Dogs"]));
+console.log(sentence(["Dogs", "cats"]));
+
+let ll = [0, 1, 2];
+console.log(ll[3]);
+
+const solution = (a) => {
+	let b = [];
+	let c = [];
+
+	let i = 0;
+	let j = a.length - 1;
+
+	let halfLength = a.length / 2;
+	console.log(halfLength);
+
+	while (i < j) {
+		if (!b.includes(a[i]) && b.length !== halfLength) {
+			b.push(a[i]);
+		} else {
+			if (!c.includes(a[i]) && c.length !== halfLength) {
+				c.push(a[i]);
+			} else {
+				return [];
+			}
+		}
+
+		if (!c.includes(a[j]) && c.length !== halfLength) {
+			c.push(a[j]);
+		} else {
+			if (!b.includes(a[j]) && b.length !== halfLength) {
+				b.push(a[j]);
+			} else {
+				return [];
+			}
+		}
+		i++;
+		j--;
+	}
+	return [b, c];
+};
+
+console.log(solution([2, 1, 2, 3, 3, 4, 7, 8, 9, 10]));

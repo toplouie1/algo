@@ -23,3 +23,24 @@ const palindrome = (num) => {
 console.log(palindrome("raceca"));
 console.log(palindrome(9992));
 console.log(palindrome(99099));
+
+let names = ["r"];
+
+const checking = (str) => {
+	let list1 = [];
+	let list2 = [];
+
+	for (let i = 0; i < str.length; i++) {
+		list1.push(str[i]);
+		list2[i] = str.pop(i);
+
+		console.log(list1);
+		console.log(list2);
+
+		if (list1[i] !== list2[i]) {
+			return false;
+		}
+	}
+	return true;
+};
+console.log(checking(names));

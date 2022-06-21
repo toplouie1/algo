@@ -122,3 +122,28 @@ const merged = async () => {
 		return gettingMerged;
 	}
 };
+
+let nonSort = [3, 6, 2, 9, 7, 9, 3];
+
+const sortBubble = (arr) => {
+	let greater;
+	do {
+		greater = false;
+		// for (let i = 0; i < arr.length; i++) {
+		for (let j = 0; j < arr.length; j++) {
+			if (arr[j] > arr[j + 1]) {
+				// e6
+				// [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+
+				let temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+				greater = true;
+			}
+		}
+	} while (greater);
+	// }
+	return arr;
+};
+
+console.log(sortBubble(nonSort));
