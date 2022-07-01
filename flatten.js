@@ -3,7 +3,8 @@ const flattenAndSort = (arr) => {
 	let flattArr = [].concat(...arr).sort(function (a, b) {
 		return a - b;
 	});
-	return [].concat(...flattArr);
+	// return [].concat(...flattArr);
+	return flattArr;
 };
 
 console.log(flattenAndSort(arr));
@@ -44,6 +45,7 @@ console.log(newName);
 console.log("hey how are you doing ");
 
 console.log(4 ** 5);
+console.log(2 ** 5);
 
 console.log(3 | 3);
 console.log(3 & 2);
@@ -95,31 +97,6 @@ console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 // 		j++;
 // 	}
 // };
-const fixParentheses = (str) => {
-	let result = "";
-	let i = 0,
-		j = 1;
-
-	while (i < str.length) {
-		if (str[i] == "(" && str[j] == ")") {
-			result += "()";
-			i += 2;
-			j += 2;
-		}
-		if (str[i] == "(") {
-			result = "(" + result + ")";
-			i++;
-			j++;
-		} else {
-			result = "(" + result;
-			i++;
-			j++;
-		}
-	}
-	return result;
-};
-
-console.log(fixParentheses("(()()("));
 
 // higher number
 
