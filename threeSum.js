@@ -3,9 +3,6 @@ var threeSum = function (nums) {
 	// sort the number
 	nums.sort((a, b) => a - b);
 
-	console.log(nums);
-	[-1, -1, 2][(-1, 0, 1)];
-
 	for (let i = 0; i < nums.length; i++) {
 		console.log(nums[i]);
 		// if num is ever greater then 0 it means all the others wouldn't be possible.
@@ -15,9 +12,7 @@ var threeSum = function (nums) {
 		// checking for duplicates
 		if (i > 0 && nums[i - 1] === nums[i]) continue;
 
-		console.log(nums[i] , i);
-
-
+		console.log(nums[i], i);
 		// create pointers
 		let left = i + 1;
 		let right = nums.length - 1;
