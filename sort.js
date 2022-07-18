@@ -147,3 +147,31 @@ const sortBubble = (arr) => {
 };
 
 console.log(sortBubble(nonSort));
+
+var moveZeroes = function (nums) {
+	let i = 0;
+	let j = 0;
+
+	while (i < nums.length) {
+		if (nums[i] !== 0) {
+			if (i !== j) {
+				[nums[i], nums[j]] = [nums[j], nums[i]];
+				j = i;
+			} else j++;
+		}
+		i++;
+	}
+	return nums;
+};
+
+console.log(moveZeroes([0, 1, 0, 3, 12]));
+
+let obj = { 2: 2, 1: 4 };
+let newArr = Object.entries(obj).sort((a, b) => {
+	return a[1] - b[1];
+});
+console.log(newArr);
+
+let cool = [1, 2, 3, 5];
+console.log(cool.splice(0, 2));
+console.log(cool);

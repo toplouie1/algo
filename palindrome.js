@@ -20,7 +20,7 @@ const palindrome = (num) => {
 	return true;
 };
 
-console.log(palindrome("raceca"));
+console.log(palindrome("racecar"));
 console.log(palindrome(9992));
 console.log(palindrome(99099));
 

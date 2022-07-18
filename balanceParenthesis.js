@@ -52,19 +52,29 @@ var isWalid = function (s) {
 	// we need to loop over the s
 	for (let each of s) {
 		// if the value is in the map;
-		if (each in validMap) {
-			// if the key in validMap then check if the last length for stack is the opposite
-			// then if the last value in stack is !== to maps[value] return false;
-			if (stack[stack.length - 1] !== validMap[each]) {
-				return false;
+		if (
+			each == "(" ||
+			each == ")" ||
+			each == "[" ||
+			each == "]" ||
+			each == "{" ||
+			each == "}"
+		) {
+			if (each in validMap) {
+				// if the key in validMap then check if the last length for stack is the opposite
+				// then if the last value in stack is !== to maps[value] return false;
+				if (stack[stack.length - 1] !== validMap[each]) {
+					return false;
+				} else {
+					stack.pop();
+				}
 			} else {
-				stack.pop();
+				stack.push(each);
 			}
-		} else {
-			stack.push(each);
 		}
 	}
 	return stack == 0;
 };
 
+console.log(isWalid("[]"));
 console.log(isWalid("[]"));
