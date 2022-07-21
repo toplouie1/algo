@@ -21,26 +21,26 @@
 
 // console.log(biggestValue([7, 1, 5, 3, 6, 4]));
 
-// var maxProfit = function (prices) {
-// 	// create max and min to hold values
-// 	let max = 0;
-// 	let min = Infinity;
+var maxProfit = function (prices) {
+	// create max and min to hold values
+	let max = 0;
+	let min = Infinity;
 
-// 	// loop the prices
-// 	for (let i = 0; i < prices.length; i++) {
-// 		// grabbing the smallest value
-// 		if (prices[i] < min) {
-// 			min = prices[i];
-// 		} else {
-// 			// grabbing the biggest value
-// 			// between max or prices[i] - min
-// 			max = Math.max(max, prices[i] - min);
-// 		}
-// 	}
-// 	return max;
-// };
+	// loop the prices
+	for (let i = 0; i < prices.length; i++) {
+		// grabbing the smallest value
+		if (prices[i] < min) {
+			min = prices[i];
+		} else {
+			// grabbing the biggest value
+			// between max or prices[i] - min
+			max = Math.max(max, prices[i] - min);
+		}
+	}
+	return max;
+};
 
-// console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
 // a = [25, 2, 3, 57, 38, 41];
 

@@ -41,10 +41,11 @@ console.log(linearSearch(classArr, "Nima Sherpa"));
 
 // Binary - Sorted lists
 let numArr = [1, 2, 3, 4, 5, 7, 10, 16, 20, 33, 44];
-// o n log(n)
+// o log(n)
 const binarySearch = (arr, valueToFind) => {
 	let startIndex = 0;
 	let endIndex = arr.length - 1;
+
 	while (startIndex <= endIndex) {
 		let midIndex = Math.floor((startIndex + endIndex) / 2);
 		console.log(midIndex);
@@ -56,11 +57,12 @@ const binarySearch = (arr, valueToFind) => {
 			endIndex = midIndex - 1;
 		}
 	}
+
 	return -1;
 };
 console.log(binarySearch(numArr, 44));
-// console.log(binarySearch(numArr, 16));
 
+// console.log(binarySearch(numArr, 16));
 // Jump = large Size Datasets
 // Exaponential - Very Large Size Datasets
 

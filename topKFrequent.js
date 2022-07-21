@@ -22,8 +22,10 @@ var topKFrequent = function (nums, k) {
 };
 
 console.log(topKFrequent([1, 1, 12, 2, 2, 3], 2));
-// console.log(topKFrequent([1,1,1,2,2,3] , 1))
-// console.log(topKFrequent([1,1,1,1,2,2,3,3,3,3,3,3,9,9,9,9,9] , 3))
+console.log(topKFrequent([1, 1, 1, 2, 2, 3], 1));
+console.log(
+	topKFrequent([1, 1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 3, 9, 9, 9, 9, 9], 3)
+);
 
 let doubleArr = [
 	[1, 2],
