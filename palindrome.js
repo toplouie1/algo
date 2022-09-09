@@ -21,10 +21,11 @@ const palindrome = (num) => {
 };
 
 console.log(palindrome("racecar"));
+console.log(palindrome("r"));
 console.log(palindrome(9992));
 console.log(palindrome(99099));
 
-let names = ["r"];
+let names = ["r", "a", "c", "e", "c", "a", "r"];
 
 const checking = (str) => {
 	let list1 = [];
@@ -32,15 +33,15 @@ const checking = (str) => {
 
 	for (let i = 0; i < str.length; i++) {
 		list1.push(str[i]);
-		list2[i] = str.pop(i);
-
-		console.log(list1);
-		console.log(list2);
+		list2[i] = str.pop();
 
 		if (list1[i] !== list2[i]) {
 			return false;
 		}
 	}
+
+	console.log(list1);
+	console.log(list2);
 	return true;
 };
 console.log(checking(names));

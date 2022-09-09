@@ -28,18 +28,3 @@ const intersection = (nums1, nums2) => {
 	return [...new Set(nums1)].filter((val) => new Set(nums2).has(val));
 };
 console.log(intersection(arr1, arr2));
-
-// let union = [...new Set([...num1, ...nums2)];
-
-let testArr = [1, 2, 1, 2, 5, 6];
-
-// console.log(...new Set(testArr))
-let newSet = new Set(testArr);
-console.log(newSet);
-console.log(newSet.add(4));
-console.log(newSet.delete(1));
-console.log(newSet.has(2));
-
-for (let n of newSet) {
-	console.log(n);
-}

@@ -33,6 +33,8 @@ let checkPalindrome = (str, left, right) => {
 	return str.substring(left + 1, right);
 };
 
+console.log(longestPalindrome("rarraar"));
+
 // --- To Do in the interview ---
 
 // Test case
@@ -43,8 +45,10 @@ let checkPalindrome = (str, left, right) => {
 // checking if the arr is unique
 
 const uniques = (nums) => {
-	return nums.length !== new Set(nums).size;
+	return nums.length === new Set(nums).size;
 };
+
+console.log(uniques("389"));
 
 const unique = (nums) => {
 	const hashTab = {};
@@ -82,10 +86,6 @@ let nums = [2, 7, 11, 15, 4, 5],
 // };
 
 var twoSum = function (nums, target) {
-	// add to the obj the key of nums -  target
-	// 2 - 8  = 6
-	// {6 : 0 }
-
 	let obj = {};
 
 	for (let i = 0; i < nums.length; i++) {
@@ -131,6 +131,8 @@ console.log(twoSum(nums, target));
 // Dogs, Cats and Walking
 
 let arrs = ["Dogs", "Cats", "Walking", "Knitting"];
+
+console.log(arrs.slice(0, -1) + " " + "and" + " " + arrs[arrs.length - 1]);
 // Dogs, Cats, Walking and Knitting
 
 // const sentence = (arr) => {
